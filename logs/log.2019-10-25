@@ -1,0 +1,37 @@
+2019-10-25 00:08:47,566 - Main Run - DEBUG - 开始获取poi类别
+2019-10-25 00:08:53,690 - Main Run - ERROR - 入库异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's','四川省成都市双流区双楠大道中段633号时代奥特莱斯F2', ' ' at line 1")
+2019-10-25 00:08:53,769 - Main Run - ERROR - 入库异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'S(时代·奥特莱斯)','四川省成都市双流区双楠大道中段633号时' at line 1")
+2019-10-25 00:08:53,868 - Main Run - ERROR - 入库异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TERYX','四川省成都市双流区双楠大道中段633号时代奥特莱斯F1'' at line 1")
+2019-10-25 00:08:53,890 - Main Run - ERROR - 入库异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's','四川省成都市双流区双楠大道中段633号时代奥特莱斯F2', ' ' at line 1")
+2019-10-25 00:09:06,058 - Main Run - ERROR - 入库异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's美甲美睫半永久(龙城国际店)','四川省成都市郫都区红光大' at line 1")
+2019-10-25 00:09:07,221 - Main Run - ERROR - 入库异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's(成都双流国际机场店)','四川省成都市双流区双流国际机场' at line 1")
+2019-10-25 00:11:36,853 - Main Run - DEBUG - 开始获取poi类别
+2019-10-25 00:11:40,127 - Main Run - DEBUG - insert into tencentpoi values(null, '7232686436515815859', 'Millie's','四川省成都市双流区双楠大道中段633号时代奥特莱斯F2', ' ', '购物', '服饰鞋包', '鞋店', 0, 30.602116, 103.943944, 510116, '四川省', '成都市', '双流区');
+2019-10-25 00:11:40,127 - Main Run - ERROR - 入库异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's','四川省成都市双流区双楠大道中段633号时代奥特莱斯F2', ' ' at line 1")
+2019-10-25 00:11:40,193 - Main Run - DEBUG - insert into tencentpoi values(null, '8473919983090964601', 'TOD'S(时代·奥特莱斯)','四川省成都市双流区双楠大道中段633号时代奥特莱斯F1', ' ', '购物', '服饰鞋包', '箱包', 0, 30.602592, 103.945283, 510116, '四川省', '成都市', '双流区');
+2019-10-25 00:11:40,193 - Main Run - ERROR - 入库异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'S(时代·奥特莱斯)','四川省成都市双流区双楠大道中段633号时' at line 1")
+2019-10-25 00:11:40,309 - Main Run - DEBUG - insert into tencentpoi values(null, '3112054003568466508', 'ARC'TERYX','四川省成都市双流区双楠大道中段633号时代奥特莱斯F1', ' ', '购物', '服饰鞋包', '服装', 0, 30.602034, 103.944677, 510116, '四川省', '成都市', '双流区');
+2019-10-25 00:11:40,310 - Main Run - ERROR - 入库异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TERYX','四川省成都市双流区双楠大道中段633号时代奥特莱斯F1'' at line 1")
+2019-10-25 00:11:40,334 - Main Run - DEBUG - insert into tencentpoi values(null, '301829034776189851', 'Levi's','四川省成都市双流区双楠大道中段633号时代奥特莱斯F2', ' ', '购物', '服饰鞋包', '服装', 0, 30.602648, 103.944817, 510116, '四川省', '成都市', '双流区');
+2019-10-25 00:11:40,334 - Main Run - ERROR - 入库异常：(1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's','四川省成都市双流区双楠大道中段633号时代奥特莱斯F2', ' ' at line 1")
+2019-10-25 00:13:19,886 - Main Run - DEBUG - 开始获取poi类别
+2019-10-25 00:13:20,188 - Main Run - DEBUG - insert into tencentpoi values(null, '102137979705090615', 'u5144u5f1fu65e7u8f66u4fe1u606fu90e8(u6210u53ccu5927u9053u4e00u6bb5u8f85u8defu5e97)','u56dbu5dddu7701u6210u90fdu5e02u53ccu6d41u533au85cfu536bu8defu5317u4e00u6bb5301u53f7u9644u8fd1', ' ', 'u6c7du8f66', 'u4e8cu624bu8f66u4ea4u6613u5e02u573a', 'None', 0, 30.5834, 103.93981, 510116, 'u56dbu5dddu7701', 'u6210u90fdu5e02', 'u53ccu6d41u533a');
+2019-10-25 00:13:20,188 - Main Run - ERROR - 入库异常：(1406, "Data too long for column 'category2' at row 1")
+2019-10-25 00:13:21,279 - Main Run - DEBUG - insert into tencentpoi values(null, '6643772573165718267', 'u4e2du56fdu79fbu52a8(u4e07u80dcu901au8bafu5e97)','u56dbu5dddu7701u6210u90fdu5e02u53ccu6d41u533au8fceu6625u68652u961fu5e86u6625u8def262u53f7', ' ', 'u751fu6d3bu670du52a1', 'u901au8bafu670du52a1', 'u4e2du56fdu79fbu52a8u8425u4e1au5385', 0, 30.585366, 103.945513, 510116, 'u56dbu5dddu7701', 'u6210u90fdu5e02', 'u53ccu6d41u533a');
+2019-10-25 00:13:21,279 - Main Run - ERROR - 入库异常：(1406, "Data too long for column 'category3' at row 1")
+2019-10-25 00:13:21,286 - Main Run - DEBUG - insert into tencentpoi values(null, '8907951147662439270', 'u4e2du56fdu4f53u80b2u5f69u7968','u56dbu5dddu7701u6210u90fdu5e02u53ccu6d41u533au6210u53ccu5927u9053u4e8cu6bb5u8f85u8def', ' ', 'u751fu6d3bu670du52a1', 'u5f69u7968', 'u5f69u7968u5f69u5238u9500u552eu70b9', 0, 30.586426, 103.944572, 510116, 'u56dbu5dddu7701', 'u6210u90fdu5e02', 'u53ccu6d41u533a');
+2019-10-25 00:13:21,286 - Main Run - ERROR - 入库异常：(1406, "Data too long for column 'category3' at row 1")
+2019-10-25 00:13:21,286 - Main Run - DEBUG - insert into tencentpoi values(null, '8566260393025366576', 'u4e2du56fdu798fu5229u5f69u7968','u56dbu5dddu7701u6210u90fdu5e02u53ccu6d41u533au5eb7u5b89u8def334u53f7', ' ', 'u751fu6d3bu670du52a1', 'u5f69u7968', 'u5f69u7968u5f69u5238u9500u552eu70b9', 0, 30.592144, 103.944948, 510116, 'u56dbu5dddu7701', 'u6210u90fdu5e02', 'u53ccu6d41u533a');
+2019-10-25 00:13:21,287 - Main Run - ERROR - 入库异常：(1406, "Data too long for column 'category3' at row 1")
+2019-10-25 00:13:21,287 - Main Run - DEBUG - insert into tencentpoi values(null, '3793057902533452420', 'u4e2du56fdu798fu5229u5f69u7968','u56dbu5dddu7701u6210u90fdu5e02u53ccu6d41u533au5546u90fdu8def169u53f7u96441', ' ', 'u751fu6d3bu670du52a1', 'u5f69u7968', 'u5f69u7968u5f69u5238u9500u552eu70b9', 0, 30.586956, 103.939315, 510116, 'u56dbu5dddu7701', 'u6210u90fdu5e02', 'u53ccu6d41u533a');
+2019-10-25 00:13:21,287 - Main Run - ERROR - 入库异常：(1406, "Data too long for column 'category3' at row 1")
+2019-10-25 00:13:21,288 - Main Run - DEBUG - insert into tencentpoi values(null, '2258735344888026881', 'u4e2du56fdu798fu5229u5f69u7968','u56dbu5dddu7701u6210u90fdu5e02u53ccu6d41u533au845bu964cu8def8u53f7', ' ', 'u751fu6d3bu670du52a1', 'u5f69u7968', 'u5f69u7968u5f69u5238u9500u552eu70b9', 0, 30.58602, 103.93629, 510116, 'u56dbu5dddu7701', 'u6210u90fdu5e02', 'u53ccu6d41u533a');
+2019-10-25 00:13:21,288 - Main Run - ERROR - 入库异常：(1406, "Data too long for column 'category3' at row 1")
+2019-10-25 00:13:21,288 - Main Run - DEBUG - insert into tencentpoi values(null, '12978590482564643822', 'u4e2du56fdu4f53u80b2u5f69u7968','u56dbu5dddu7701u6210u90fdu5e02u53ccu6d41u533au5546u90fdu8def201u53f7', ' ', 'u751fu6d3bu670du52a1', 'u5f69u7968', 'u5f69u7968u5f69u5238u9500u552eu70b9', 0, 30.58742, 103.93891, 510116, 'u56dbu5dddu7701', 'u6210u90fdu5e02', 'u53ccu6d41u533a');
+2019-10-25 00:13:21,288 - Main Run - ERROR - 入库异常：(1406, "Data too long for column 'category3' at row 1")
+2019-10-25 00:14:20,339 - Main Run - DEBUG - 开始获取poi类别
+2019-10-25 00:17:11,539 - Main Run - DEBUG - 开始获取poi类别
+2019-10-25 00:17:56,756 - Main Run - DEBUG - 开始获取poi类别
+2019-10-25 00:18:52,933 - Main Run - DEBUG - 开始获取poi类别
+2019-10-25 00:19:27,226 - Main Run - INFO - 完成入库操作
+2019-10-25 00:19:27,226 - Main Run - INFO - 本次执行用时：34292.05ms
