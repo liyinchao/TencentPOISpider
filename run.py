@@ -9,8 +9,8 @@ import time
 import json
 import pymysql as mysql
 from utility.Config import getConfig
-from utility.Logger import getLogger
 from utility.Global import Global
+from utility.Logger import getLogger
 
 Global.config = getConfig('conf/default.cfg')
 
@@ -47,6 +47,11 @@ def write_rectangle(logger):
 
 
 def write_rectangle2(logger):
+    '''
+    将网格进行分割，并写入网格批次文件， split为每个文件保存多少个网格
+    :param logger:
+    :return:
+    '''
     from TencentPOI import TencentPOI
     if TencentPOI.split_rectangle('datafile/rect2',
                                   Global.config.chengdu2.blat,
@@ -61,6 +66,13 @@ def write_rectangle2(logger):
 
 
 def search_rectangles(from_index, to_index, logger):
+    '''
+    检索网格批次，以生成的网格文件为单位，1个文件为一个批次
+    :param from_index: 开始的批次
+    :param to_index: 结束的批次（不包含）
+    :param logger:
+    :return:
+    '''
     from TencentPOI import TencentPOI
     categories = []
     with open('datafile/poi_list_2', 'r', encoding='utf-8') as f:
@@ -68,7 +80,7 @@ def search_rectangles(from_index, to_index, logger):
             categories.append(line.replace('\n', ''))
     for index in range(from_index, to_index):
         rects = []
-        filename = 'datafile/rect2_{}.obj'.format(index)
+        filename = 'datafile/rect_{}.obj'.format(index)
         with open(filename, 'r', encoding='utf-8') as f:
             for line in f.readlines():
                 rects.append(json.loads(line))
@@ -80,40 +92,54 @@ def search_rectangles(from_index, to_index, logger):
 
 
 def save_db(filename, logger):
+    '''
+    将检索数据存入数据库
+    :param filename: 检索数据文件名
+    :param logger:
+    :return:
+    '''
     def s2db(value):
         if isinstance(value, str):
             return value.replace("'", '"').replace("\\", "")
         else:
             return value
 
+    start = time.time()
     db = mysql.connect(Global.config.mysql.host, Global.config.mysql.uid,
                        Global.config.mysql.pwd, Global.config.mysql.dbname)
     cursor = db.cursor()
-    sql_base = "insert into tencentpoi values(null, '{id}', '{title}','{address}', '{tel}', '{cate1}', " \
-               "'{cate2}', '{cate3}', {type}, {lat}, {lng}, {adcode}, '{province}', '{city}', '{district}');"
+    sql = "insert into tencentpoi(id,title,address,tel,category1,category2,category3,type,lat,lng,adcode,province," \
+          "city,district) values(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
     with open(filename, 'r', encoding='utf-8') as f:
         for line in f.readlines():
-            obj = json.loads(line)
-            for k, v in obj.items():
-                obj[k] = s2db(v)
-            sql = sql_base.format(**obj)
             try:
-                cursor.execute(sql)
+                obj = json.loads(line)
+                category = obj.get('category')
+                arr_cate = category.split(':')
+                arr_cate += [None, None]
+                cursor.execute(sql, args=(obj.get('id'), obj.get('title'), obj.get('address'), obj.get('tel'),
+                                          arr_cate[0], arr_cate[1], arr_cate[2], obj.get('type'),
+                                          obj.get('location').get('lat'), obj.get('location').get('lng'),
+                                          obj.get('ad_info').get('adcode'), obj.get('ad_info').get('province'),
+                                          obj.get('ad_info').get('city'), obj.get('ad_info').get('district')))
                 db.commit()
             except Exception as e:
-                logger.debug(sql)
-                logger.error('入库异常：{}'.format(e))
+                # logger.error('入库异常：{}'.format(e))
                 db.rollback()
     db.close()
-    logger.info('完成入库操作')
+    end = time.time()
+    logger.info('本次执行用时：{:.2f}s'.format((end - start)))
 
 
 if __name__ == '__main__':
     logger = getLogger('Main Run')
-    logger.debug('开始获取poi类别')
     start = time.time()
-    search_rectangles(0, 1, logger)
-    # write_rectangle2(logger)
-    # save_db('poidata/rect_0.poi', logger)
+    for i in range(1, 40):
+        filename = 'poidata/rect_{}.poi'.format(i)
+        logger.debug('开始导入文件{}的数据'.format(filename))
+        save_db(filename, logger)
     end = time.time()
-    logger.info('本次执行用时：{:.2f}s'.format((end-start)))
+    logger.info('全部执行用时：{:.2f}s'.format((end-start)))
+
+    # import searchPOIDetail
+    # searchPOIDetail.search_more_file(0, 1)

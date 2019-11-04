@@ -218,9 +218,10 @@ class TencentPOI(object):
             if int(js.get('status')) == 0:
                 total = int(js.get('count'))
                 if total > 200:
+                    cls.logger.info('一共{}条数据，只取前200条'.format(total))
                     total = 200
                 list_data = js.get('data', [])
-                time.sleep(0.1)
+                # time.sleep(0.1)
                 while total > 20 * page:
                     page += 1
                     parm['page'] = page
@@ -228,7 +229,7 @@ class TencentPOI(object):
                     response = requests.get(url)
                     js = json.loads(response.content.decode())
                     list_data += js.get('data', [])
-                    time.sleep(0.1)
+                    # time.sleep(0.1)
                 # cls.logger.debug('从{}检索 {} 的结果是 {} 条数据'.format(index, category, total))
                 return list_data
             else:

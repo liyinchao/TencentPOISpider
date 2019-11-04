@@ -30,6 +30,7 @@ def getConfig(file_name=None):
             config[section] = ConfigDict()
             for key in parser[section]:
                 config[section][key] = parser.get(section, key)
-    except:
+    except Exception as e:
+        print(e)
         config = ConfigDict()
     return config
